@@ -53,6 +53,9 @@ Route::get('gerente/producto/{producto}/edit', 'Gerente\ProductoController@edit'
 Route::put('gerente/producto/{producto}', 'Gerente\ProductoController@update')->name('gerente.producto.update');
 Route::get('gerente/producto/{producto}/show', 'Gerente\ProductoController@show')->name('gerente.producto.show');
 Route::post('gerente/producto/store', 'Gerente\ProductoController@store')->name('gerente.producto.store');
+Route::post('gerente/producto/buscar', 'Gerente\ProductoController@buscar')->name('gerente.producto.buscar');
+
+
 
 
 // rutas del gerente para crear sucursales

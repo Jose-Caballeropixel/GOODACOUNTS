@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <a href="{{route('administrador.usuarios.create')}}">Crear Usuario</a>
+                <a href="{{route('gerente.usuarios.create')}}">Crear Usuario</a>
                 <table class="table table-reponsive">
                     <thead>
                         <tr>
@@ -21,7 +21,6 @@
                             <td>{{$usuario->email}}</td>
                             <td>{{$usuario->empresa_id}}</td>
                             <td>{{$usuario->role->nombre}}</td>
-
                         </tr>
                         @endforeach
                     </tbody>
