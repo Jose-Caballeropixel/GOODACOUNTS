@@ -20,8 +20,21 @@ Route::post('/empresa','Administrador\EmpresaController@store')->name('empresa.s
 Route::get('/empresa/{empresa}/edit','Administrador\EmpresaController@edit')->name('empresa.edit');
 Route::put('/empresa/{empresa}','Administrador\EmpresaController@update')->name('empresa.update');
 
+<<<<<<< HEAD
 
 
+=======
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
+Route::get('gerente/producto', 'Gerente\ProductoController@index')->name('gerente.producto.index');
+Route::get('gerente/producto/create', 'Gerente\ProductoController@create')->name('gerente.producto.create');
+
+Route::post('gerente/producto/store', 'Gerente\ProductoController@store')->name('gerente.producto.store');
+
+>>>>>>> 5eccaaf858fe34c16e6c1b090f6c9a2630483342
 
 Auth::routes();
 
