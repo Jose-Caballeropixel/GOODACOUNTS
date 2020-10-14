@@ -516,13 +516,8 @@ class ComposerStaticInitce9ccdd5a6fc48d2dc5a3f295fb1fc43
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\Gerente\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Gerente/HomeController.php',
         'App\\Http\\Controllers\\Gerente\\ProductoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Gerente/ProductoController.php',
-<<<<<<< HEAD
-
         'App\\Http\\Controllers\\Gerente\\SucursalController' => __DIR__ . '/../..' . '/app/Http/Controllers/Gerente/SucursalController.php',
-
-=======
         'App\\Http\\Controllers\\Gerente\\SucursalController' => __DIR__ . '/../..' . '/app/Http/Controllers/Gerente/SucursalController.php',
->>>>>>> b19242887f4ff3685b412ae5283c57cb2891dd53
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
