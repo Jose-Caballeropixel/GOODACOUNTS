@@ -63,6 +63,9 @@ Route::get('gerente/producto/{producto}/show', 'Gerente\ProductoController@show'
 Route::post('gerente/producto/store', 'Gerente\ProductoController@store')->name('gerente.producto.store');
 Route::post('gerente/producto/buscar', 'Gerente\ProductoController@buscar')->name('gerente.producto.buscar');
 
+//Rutas de bodeguero
+Route::get('/bodeguero/entrada', 'Bodeguero\EntradaController@index')->name('bodeguero.entrada');
+Route::post('/bodeguero/buscar/producto', 'Bodeguero\EntradaController@buscar')->name('bodeguero.entrada.buscar');
 
 
 
