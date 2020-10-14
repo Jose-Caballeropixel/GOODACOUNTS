@@ -9,6 +9,7 @@
 <body>
     <h1>Sucursal</h1>
     <a href="{{route('gerente.sucursal.create')}}">Formulario</a>
+    <a href="{{route('gerente.bodega.index')}}">Lista de socursales</a>
     <br><br>
     <table>
         <thead>
@@ -34,7 +35,7 @@
 
             @endforeach
         </tbody>
-        {{$sucursales->links()}}
+
     </table>
 </body>
 </html>
