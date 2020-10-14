@@ -131,4 +131,13 @@ class ProductoController extends Controller
     {
         //
     }
+
+    //Metodos para consumir por ajax
+
+    public function buscar(Request $request)
+    {
+        $nombre=$request['nombre'];
+        $productos= Producto::where('nombre', 'LIKE', "%$nombre%");
+        return response()->json($productos, 200);
+    }
 }

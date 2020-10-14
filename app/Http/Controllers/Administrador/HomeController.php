@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Gerente;
+namespace App\Http\Controllers\Administrador;
 
+use App\Empresa;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('gerente.index');
+        return view('administrador.index');
     }
 
     /**

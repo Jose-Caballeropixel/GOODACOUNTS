@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    display: flex;
+    background: #7A7DAF;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.navbar .lado-derecho a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    padding-left: 20px;
+}
+.navbar .lado-derecho label li{
+    color: white;
+    padding-left: 110px;
+    font-size: 20px;
+}
+.navbar .lado-derecho label li:hover{
+    color: rgb(14, 14, 59);
+    cursor: pointer;
+}
+.navbar .lado-izquierdo ul a{
+    color: white;
+    padding-right: 35px;
+    text-decoration: none;
+    padding-top: 5px;
+}
+
+.sidebar{
+    width: 16rem;
+    height: 100%;
+    background: #FFFFFF;
+    color: #D0D0D0;
+    border: 1px solid rgb(212, 212, 212);
+    position: fixed;
+}
+.sidebar .opciones-sidebar{
+    margin-top: 80px;
+}
+.sidebar a{
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #D0D0D0;
+    font-weight: 900;
+}
+.sidebar a:hover{
+    background: #D4D5E5;
+    text-decoration: none;
+}
+.sidebar a:hover{
+    color: #8285B4;
+}
+
+
+.col{
+    padding: 10px;
+}
+
+.content{
+    margin-left: 16rem;
+}
+.fondo-cabecera-contenido{
+    width: 100%;
+    height: 20%;
+    background: #D4D5E5;
+}
+.contenedor-contenido-general{
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin-top: -70px;
+    background: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.titulo-contenido{
+    text-align: center;
+    text-transform: uppercase;
+}
+.opciones-contenido{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+#check{
+    display: none;
+}
+#check:checked~.sidebar{
+    margin-left: -190px;
+}
+#check:checked~.content{
+    margin-left: 60px;
+}
+#check:checked~.sidebar a span{
+    display: none;
+}
+#check:checked~.sidebar a{
+    margin-left: 184px;
+    padding-left: 26px;
+    font-size: 20px;
+}
+#check:checked~.navbar .lado-derecho label li{
+    margin-left: 140px;
+    margin-top: -18px;
+}
+#check:checked~.navbar .lado-izquierdo a{
+    display: none;
+}
