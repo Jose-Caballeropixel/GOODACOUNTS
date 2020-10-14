@@ -16,6 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','Administrador\EmpresaController@index')->name('empresa.index');
 Route::get('/empresa/create','Administrador\EmpresaController@create')->name('empresa.create');
 Route::post('/empresa','Administrador\EmpresaController@store')->name('empresa.store');
+
+//Rutas de aministrador para crear usuario
+Route::get('/administrador/usuarios', 'Administrador\UserController@index')->name('administrador.usuarios.index');
+Route::get('/administrador/usuarios/create', 'Administrador\UserController@create')->name('administrador.usuarios.create');
+Route::post('/administrador/usuarios/store', 'Administrador\UserController@store')->name('administrador.usuarios.store');
+
 //creamos la ruta de actualizar
 Route::get('/empresa/{empresa}/edit','Administrador\EmpresaController@edit')->name('empresa.edit');
 Route::put('/empresa/{empresa}','Administrador\EmpresaController@update')->name('empresa.update');
