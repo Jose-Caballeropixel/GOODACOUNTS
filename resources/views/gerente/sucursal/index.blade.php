@@ -8,5 +8,6 @@
 </head>
 <body>
     <h1>Sucursal</h1>
+    <a href="gerente.sucursal.create">Formulario</a>
 </body>
 </html>
