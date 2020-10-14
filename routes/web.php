@@ -30,7 +30,16 @@ Route::post('gerente/producto/store', 'Gerente\ProductoController@store')->name(
 
 // rutas del gerente para crear sucursales
 Route::get('/gerente/sucursal','Gerente\SucursalController@index')->name('gerente.sucursal.index');
-Route::get('gerente/sucursal/create','Gerente\SucursalController@create')->name('gerente.sucursal.create');
+Route::get('/sucursal/create','Gerente\SucursalController@create')->name('gerente.sucursal.create');
+//ruta para agregar sucursal
+Route::post('/sucursal/store','Gerente\SucursalController@store')->name('gerente.sucursal.store');
+//ruta para actualizar
+Route::get('/sucursal/{sucursal}/edit','Gerente\SucursalController@edit')->name('gerente.sucursal.edit');
+Route::put('/sucursal/{sucursal}','Gerente\SucursalController@update')->name('gerente.sucursal.update');
+
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
