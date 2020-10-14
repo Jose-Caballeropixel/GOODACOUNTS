@@ -95,7 +95,7 @@ class EmpresaController extends Controller
             $empresa->Nombre = $data['nombre'],
             $empresa->Correo = $data['correo'],
         ]);
-        return redirect()->route('empresa.index');
+        return redirect()->route('administrador.empresa.index');
     }
 
     /**

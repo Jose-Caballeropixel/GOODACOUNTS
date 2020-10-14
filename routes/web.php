@@ -13,12 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //creamos las rutas principales para el administrador
-Route::get('/','Administrador\EmpresaController@index')->name('empresa.index');
-Route::get('/empresa/create','Administrador\EmpresaController@create')->name('empresa.create');
-Route::post('/empresa','Administrador\EmpresaController@store')->name('empresa.store');
+Route::get('/','Administrador\EmpresaController@index')->name('administrador.empresa.index');
+Route::get('/empresa/create','Administrador\EmpresaController@create')->name('administrador.empresa.create');
+Route::post('/empresa','Administrador\EmpresaController@store')->name('administrador.empresa.store');
 //creamos la ruta de actualizar
-Route::get('/empresa/{empresa}/edit','Administrador\EmpresaController@edit')->name('empresa.edit');
-Route::put('/empresa/{empresa}','Administrador\EmpresaController@update')->name('empresa.update');
+Route::get('/empresa/{empresa}/edit','Administrador\EmpresaController@edit')->name('administrador.empresa.edit');
+Route::put('/empresa/{empresa}','Administrador\EmpresaController@update')->name('administrador.empresa.update');
 
 
 
