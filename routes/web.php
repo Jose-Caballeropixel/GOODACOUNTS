@@ -18,22 +18,16 @@ Route::get('/','Administrador\EmpresaController@index')->name('administrador.emp
 Route::get('/empresa/create','Administrador\EmpresaController@create')->name('administrador.empresa.create');
 Route::post('/empresa','Administrador\EmpresaController@store')->name('administrador.empresa.store');
 //creamos la ruta de actualizar
-<<<<<<< HEAD
-Route::get('/empresa/{empresa}/edit','Administrador\EmpresaController@edit')->name('empresa.edit');
-Route::put('/empresa/{empresa}','Administrador\EmpresaController@update')->name('empresa.update');
-Route::get('/administrador' ,'Administrador\HomeController@index')->name('administrador.index');
-Route::get('/gerente' ,'Administrador\HomeController@index')->name('gerente.index');
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
-=======
 Route::get('/empresa/{empresa}/edit','Administrador\EmpresaController@edit')->name('administrador.empresa.edit');
 Route::put('/empresa/{empresa}','Administrador\EmpresaController@update')->name('administrador.empresa.update');
 
->>>>>>> 12dfff69fd02e6f5d3fcc91a76a0f05fcd3a7383
+// Redireccion a Dashboard Segun Rol
+Route::get('/administrador' ,'Administrador\HomeController@index')->name('administrador.index');
+Route::get('/gerente' ,'Gerente\HomeController@index')->name('gerente.index');
+
 
 
 //rutas del generente para crear productos
@@ -46,8 +40,7 @@ Route::get('gerente/producto/{producto}/show', 'Gerente\ProductoController@show'
 
 Route::post('gerente/producto/store', 'Gerente\ProductoController@store')->name('gerente.producto.store');
 
-<<<<<<< HEAD
-=======
+
 // rutas del gerente para crear sucursales
 Route::get('/gerente/sucursal','Gerente\SucursalController@index')->name('gerente.sucursal.index');
 Route::get('/sucursal/create','Gerente\SucursalController@create')->name('gerente.sucursal.create');
@@ -60,7 +53,6 @@ Route::put('/sucursal/{sucursal}','Gerente\SucursalController@update')->name('ge
 
 
 
->>>>>>> 12dfff69fd02e6f5d3fcc91a76a0f05fcd3a7383
 Auth::routes();
 
 
