@@ -9,7 +9,7 @@
 <body>
     <h1>Bienvenido</h1>
     <a href="{{route('empresa.create')}}">Formulario</a>
-
+    <a href="{{route('sucursal.index')}}">sucursal</a>
     <table>
         <thead>
             <tr>
