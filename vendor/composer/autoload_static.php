@@ -505,6 +505,8 @@ class ComposerStaticInitce9ccdd5a6fc48d2dc5a3f295fb1fc43
         'App\\Empresa' => __DIR__ . '/../..' . '/app/Empresa.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Administrador\\EmpresaController' => __DIR__ . '/../..' . '/app/Http/Controllers/Administrador/EmpresaController.php',
+        'App\\Http\\Controllers\\Administrador\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Administrador/HomeController.php',
+        'App\\Http\\Controllers\\Administrador\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Administrador/UserController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -514,10 +516,7 @@ class ComposerStaticInitce9ccdd5a6fc48d2dc5a3f295fb1fc43
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\Gerente\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Gerente/HomeController.php',
         'App\\Http\\Controllers\\Gerente\\ProductoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Gerente/ProductoController.php',
-<<<<<<< HEAD
-=======
         'App\\Http\\Controllers\\Gerente\\SucursalController' => __DIR__ . '/../..' . '/app/Http/Controllers/Gerente/SucursalController.php',
->>>>>>> 12dfff69fd02e6f5d3fcc91a76a0f05fcd3a7383
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -534,6 +533,7 @@ class ComposerStaticInitce9ccdd5a6fc48d2dc5a3f295fb1fc43
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Role' => __DIR__ . '/../..' . '/app/Role.php',
         'App\\Sucursal' => __DIR__ . '/../..' . '/app/Sucursal.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\View\\Components\\Error' => __DIR__ . '/../..' . '/app/View/Components/Error.php',
@@ -4040,6 +4040,7 @@ class ComposerStaticInitce9ccdd5a6fc48d2dc5a3f295fb1fc43
         'Ramsey\\Uuid\\UuidInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidInterface.php',
         'Ramsey\\Uuid\\Validator\\GenericValidator' => __DIR__ . '/..' . '/ramsey/uuid/src/Validator/GenericValidator.php',
         'Ramsey\\Uuid\\Validator\\ValidatorInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/Validator/ValidatorInterface.php',
+        'RoleSeeder' => __DIR__ . '/../..' . '/database/seeds/RoleSeeder.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
         'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Driver/Driver.php',

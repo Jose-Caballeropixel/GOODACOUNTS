@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('administrador.usuarios.store') }}">
+                    <form method="POST" action="{{ route('gerente.usuarios.store') }}">
                         @csrf
 
                         <div class="form-group ">
@@ -60,7 +60,23 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+                        <div class="form-group ">
+                            <label for="rol" class="">Rol de usuario</label>
 
+                            <div class="">
+                                <select name="rol" id="" class="form-control">
+                                    <option value="">--Selecione un rol--</option>
+                                    @foreach ($roles as $role)
+                                        <option value="{{$role->id}}">{{$role->nombre}}</option>
+                                    @endforeach
+                                </select>
+                                @error('rol')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="form-group  mb-0">
                             <div class=" offset-md-4">
