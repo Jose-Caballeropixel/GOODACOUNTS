@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,11 +20,11 @@ Route::post('/empresa','Administrador\EmpresaController@store')->name('empresa.s
 //creamos la ruta de actualizar
 Route::get('/empresa/{empresa}/edit','Administrador\EmpresaController@edit')->name('empresa.edit');
 Route::put('/empresa/{empresa}','Administrador\EmpresaController@update')->name('empresa.update');
+Route::get('/administrador' ,'Administrador\HomeController@index')->name('administrador.index');
+Route::get('/gerente' ,'Administrador\HomeController@index')->name('gerente.index');
 
-<<<<<<< HEAD
 
 
-=======
 Route::get('/', function () {
     return view('welcome');
 });
@@ -34,8 +35,7 @@ Route::get('gerente/producto/create', 'Gerente\ProductoController@create')->name
 
 Route::post('gerente/producto/store', 'Gerente\ProductoController@store')->name('gerente.producto.store');
 
->>>>>>> 5eccaaf858fe34c16e6c1b090f6c9a2630483342
-
 Auth::routes();
+
 
 Route::get('/home', 'HomeController@index')->name('home');
