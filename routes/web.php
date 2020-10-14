@@ -29,7 +29,8 @@ Route::get('gerente/producto/create', 'Gerente\ProductoController@create')->name
 Route::post('gerente/producto/store', 'Gerente\ProductoController@store')->name('gerente.producto.store');
 
 // rutas del gerente para crear sucursales
-
+Route::get('/gerente/sucursal','Gerente\SucursalController@index')->name('gerente.sucursal.index');
+Route::get('gerente/sucursal/create','Gerente\SucursalController@create')->name('gerente.sucursal.create');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

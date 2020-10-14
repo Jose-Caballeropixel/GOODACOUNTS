@@ -15,7 +15,7 @@ class SucursalController extends Controller
      */
     public function index()
     {
-        //
+        return view('gerente.sucursal.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class SucursalController extends Controller
      */
     public function create()
     {
-        //
+       return view('gerente.sucursal.create');
     }
 
     /**

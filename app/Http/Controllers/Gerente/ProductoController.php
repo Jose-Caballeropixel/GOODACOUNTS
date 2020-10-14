@@ -40,9 +40,9 @@ class ProductoController extends Controller
     {
         $data = $request->validate([
             'nombre' => 'required|string|min:2',
-            'codigo' => 'required|string|',
+            'codigo' => 'required|string',
             'imagen' => 'required|string|',
-            'precio' => 'required|number|'
+            'precio' => 'required'
         ]);
 
         $producto = new  Producto();

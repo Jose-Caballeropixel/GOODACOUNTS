@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Sucursal</h1>
+    <h1>formulario</h1>
 </body>
 </html>
