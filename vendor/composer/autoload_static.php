@@ -514,6 +514,10 @@ class ComposerStaticInitce9ccdd5a6fc48d2dc5a3f295fb1fc43
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\Gerente\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Gerente/HomeController.php',
         'App\\Http\\Controllers\\Gerente\\ProductoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Gerente/ProductoController.php',
+<<<<<<< HEAD
+=======
+        'App\\Http\\Controllers\\Gerente\\SucursalController' => __DIR__ . '/../..' . '/app/Http/Controllers/Gerente/SucursalController.php',
+>>>>>>> 12dfff69fd02e6f5d3fcc91a76a0f05fcd3a7383
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -530,6 +534,7 @@ class ComposerStaticInitce9ccdd5a6fc48d2dc5a3f295fb1fc43
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Sucursal' => __DIR__ . '/../..' . '/app/Sucursal.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\View\\Components\\Error' => __DIR__ . '/../..' . '/app/View/Components/Error.php',
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',

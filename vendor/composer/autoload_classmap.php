@@ -19,6 +19,10 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\Gerente\\HomeController' => $baseDir . '/app/Http/Controllers/Gerente/HomeController.php',
     'App\\Http\\Controllers\\Gerente\\ProductoController' => $baseDir . '/app/Http/Controllers/Gerente/ProductoController.php',
+<<<<<<< HEAD
+=======
+    'App\\Http\\Controllers\\Gerente\\SucursalController' => $baseDir . '/app/Http/Controllers/Gerente/SucursalController.php',
+>>>>>>> 12dfff69fd02e6f5d3fcc91a76a0f05fcd3a7383
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
@@ -35,6 +39,7 @@ return array(
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
+    'App\\Sucursal' => $baseDir . '/app/Sucursal.php',
     'App\\User' => $baseDir . '/app/User.php',
     'App\\View\\Components\\Error' => $baseDir . '/app/View/Components/Error.php',
     'ArithmeticError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',

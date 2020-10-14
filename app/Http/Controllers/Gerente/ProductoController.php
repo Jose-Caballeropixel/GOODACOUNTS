@@ -41,17 +41,28 @@ class ProductoController extends Controller
         $data = $request->validate([
             'nombre' => 'required|string|min:2',
             'codigo' => 'required|string|',
-            'imagen' => 'required|string|',
-            'precio' => 'required|number|'
+            'imagen' => 'mimes:png,jpeg,jpg|',
+            'precio' => 'required|'
         ]);
-
         $producto = new  Producto();
+
+        if($request->file('imagen')){
+            $archivo=$request->file('imagen');
+            $ruta= public_path('/storage/productos');
+            $nombreArchivo=time().'.'.$request->file('imagen')->extension();
+            $archivo->move($ruta,$nombreArchivo);
+            $producto->imagen = $nombreArchivo;
+
+        }else{
+            $producto->imagen = 'sinimagen.png';
+
+        }
         $producto->nombre = $data['nombre'];
         $producto->codigo = $data['codigo'];
-        $producto->imagen = $data['imagen'];
         $producto->precio = $data['precio'];
 
         $producto->save();
+        return redirect()->route('gerente.producto.index')->with('mensaje', 'Producto '.$producto->nombre. 'Agregado Correctamente');
 
     }
 
@@ -63,7 +74,7 @@ class ProductoController extends Controller
      */
     public function show(Producto $producto)
     {
-        //
+        return view('gerente.producto.show', compact('producto'));
     }
 
     /**
@@ -74,7 +85,7 @@ class ProductoController extends Controller
      */
     public function edit(Producto $producto)
     {
-        //
+        return view('gerente.producto.edit', compact('producto'));
     }
 
     /**
@@ -86,7 +97,28 @@ class ProductoController extends Controller
      */
     public function update(Request $request, Producto $producto)
     {
-        //
+        $data = $request->validate([
+            'nombre' => 'required|string|min:2',
+            'codigo' => 'required|string|',
+            'imagen' => 'mimes:png,jpeg,jpg|',
+            'precio' => 'required|'
+        ]);
+
+        if($request->file('imagen')){
+            $archivo=$request->file('imagen');
+            $ruta= public_path('/storage/productos');
+            $nombreArchivo=time().'.'.$request->file('imagen')->extension();
+            $archivo->move($ruta,$nombreArchivo);
+            $producto->imagen = $nombreArchivo;
+
+        }
+        $producto->nombre = $data['nombre'];
+        $producto->codigo = $data['codigo'];
+        $producto->precio = $data['precio'];
+
+        $producto->save();
+        return redirect()->route('gerente.producto.index')->with('mensaje', 'Producto '.$producto->nombre. 'Actulizado Correctamente');
+
     }
 
     /**

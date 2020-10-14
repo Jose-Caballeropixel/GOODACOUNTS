@@ -7,33 +7,34 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Bienvenido</h1>
-    <a href="{{route('administrador.empresa.create')}}">Formulario</a>
-    <a href="{{route('gerente.sucursal.index')}}">sucursal</a>
+    <h1>Sucursal</h1>
+    <a href="{{route('gerente.sucursal.create')}}">Formulario</a>
+    <br><br>
     <table>
         <thead>
             <tr>
                 <th>#</th>
-                <th>NIT</th>
-                <th>Nombre de la Empresa</th>
+                <th>Nombre Sucursal</th>
+                <th>Direccion</th>
                 <th>Correo electronico</th>
                 <th>opciones</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($empresas as $empresa)
+            @foreach ($sucursales as $sucursal)
                 <tr>
-                    <td>{{$empresa->id}}</td>
-                    <td>{{$empresa->NIT}}</td>
-                    <td>{{$empresa->Nombre}}</td>
-                    <td>{{$empresa->Correo}}</td>
+                    <td>{{$sucursal->id}}</td>
+                    <td>{{$sucursal->Nombre}}</td>
+                    <td>{{$sucursal->Direccion}}</td>
+                    <td>{{$sucursal->CorreoS}}</td>
                     <td>
-                        <a href="{{route('administrador.empresa.edit',['empresa'=>$empresa->id])}}">Modificar</a>
+                        <a href="{{route('gerente.sucursal.edit',['sucursal'=>$sucursal->id])}}">Modificar</a>
                     </td>
                 </tr>
 
             @endforeach
         </tbody>
+        {{$sucursales->links()}}
     </table>
 </body>
 </html>
