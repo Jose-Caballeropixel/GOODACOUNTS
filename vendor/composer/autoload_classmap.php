@@ -6,6 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Bodega' => $baseDir . '/app/Bodega.php',
+    'App\\Cliente' => $baseDir . '/app/Cliente.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Empresa' => $baseDir . '/app/Empresa.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
@@ -17,6 +19,7 @@ return array(
     'App\\Http\\Controllers\\Auth\\ResetPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ResetPasswordController.php',
     'App\\Http\\Controllers\\Auth\\VerificationController' => $baseDir . '/app/Http/Controllers/Auth/VerificationController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'App\\Http\\Controllers\\Gerente\\BodegaController' => $baseDir . '/app/Http/Controllers/Gerente/BodegaController.php',
     'App\\Http\\Controllers\\Gerente\\HomeController' => $baseDir . '/app/Http/Controllers/Gerente/HomeController.php',
     'App\\Http\\Controllers\\Gerente\\ProductoController' => $baseDir . '/app/Http/Controllers/Gerente/ProductoController.php',
     'App\\Http\\Controllers\\Gerente\\SucursalController' => $baseDir . '/app/Http/Controllers/Gerente/SucursalController.php',

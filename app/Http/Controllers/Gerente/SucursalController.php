@@ -44,13 +44,13 @@ class SucursalController extends Controller
             'correo' => 'required|string',
         ]);
 
-        $sucursales = new Sucursal();
-        $sucursales->Nombre = $data['nombre'];
-        $sucursales->Direccion = $data['direccion'];
-        $sucursales->Correos = $data['correo'];
-        $sucursales->save();
+        $sucursal = new Sucursal();
+        $sucursal->Nombre = $data['nombre'];
+        $sucursal->Direccion = $data['direccion'];
+        $sucursal->Correos = $data['correo'];
+        $sucursal->save();
 
-        return redirect()->route('gerente.sucursal.index');
+        return redirect()->route('gerente.bodega.create',['sucursal'=>$sucursal]);
     }
 
     /**

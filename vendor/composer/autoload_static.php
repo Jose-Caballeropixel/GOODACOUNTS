@@ -501,6 +501,8 @@ class ComposerStaticInitce9ccdd5a6fc48d2dc5a3f295fb1fc43
     );
 
     public static $classMap = array (
+        'App\\Bodega' => __DIR__ . '/../..' . '/app/Bodega.php',
+        'App\\Cliente' => __DIR__ . '/../..' . '/app/Cliente.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Empresa' => __DIR__ . '/../..' . '/app/Empresa.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -512,6 +514,7 @@ class ComposerStaticInitce9ccdd5a6fc48d2dc5a3f295fb1fc43
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\Gerente\\BodegaController' => __DIR__ . '/../..' . '/app/Http/Controllers/Gerente/BodegaController.php',
         'App\\Http\\Controllers\\Gerente\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Gerente/HomeController.php',
         'App\\Http\\Controllers\\Gerente\\ProductoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Gerente/ProductoController.php',
         'App\\Http\\Controllers\\Gerente\\SucursalController' => __DIR__ . '/../..' . '/app/Http/Controllers/Gerente/SucursalController.php',
