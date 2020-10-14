@@ -25,6 +25,10 @@ Route::put('/empresa/{empresa}','Administrador\EmpresaController@update')->name(
 //rutas del generente para crear productos
 Route::get('gerente/producto', 'Gerente\ProductoController@index')->name('gerente.producto.index');
 Route::get('gerente/producto/create', 'Gerente\ProductoController@create')->name('gerente.producto.create');
+Route::get('gerente/producto/{producto}/edit', 'Gerente\ProductoController@edit')->name('gerente.producto.edit');
+Route::put('gerente/producto/{producto}', 'Gerente\ProductoController@update')->name('gerente.producto.update');
+Route::get('gerente/producto/{producto}/show', 'Gerente\ProductoController@show')->name('gerente.producto.show');
+
 
 Route::post('gerente/producto/store', 'Gerente\ProductoController@store')->name('gerente.producto.store');
 
