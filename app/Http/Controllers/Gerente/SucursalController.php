@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Gerente;
 use App\Http\Controllers\Controller;
 use App\Sucursal;
 use Illuminate\Http\Request;
+use Psy\Sudo;
 
 class SucursalController extends Controller
 {
@@ -15,7 +16,8 @@ class SucursalController extends Controller
      */
     public function index()
     {
-        return view('gerente.sucursal.index');
+        $sucursales = Sucursal::latest()->paginate(4);
+        return view('gerente.sucursal.index',compact('sucursales'));
     }
 
     /**
@@ -36,7 +38,19 @@ class SucursalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'nombre' => 'required|string',
+            'direccion' => 'required|string',
+            'correo' => 'required|string',
+        ]);
+
+        $sucursales = new Sucursal();
+        $sucursales->Nombre = $data['nombre'];
+        $sucursales->Direccion = $data['direccion'];
+        $sucursales->Correos = $data['correo'];
+        $sucursales->save();
+
+        return redirect()->route('gerente.sucursal.index');
     }
 
     /**
@@ -58,7 +72,7 @@ class SucursalController extends Controller
      */
     public function edit(Sucursal $sucursal)
     {
-        //
+        return view('gerente.sucursal.edit',compact('sucursal'));
     }
 
     /**
@@ -70,7 +84,18 @@ class SucursalController extends Controller
      */
     public function update(Request $request, Sucursal $sucursal)
     {
-        //
+        $data = $request->validate([
+            'nombre' => 'required|string',
+            'direccion' => 'required|string',
+            'correo' => 'required|string',
+        ]);
+        $sucursal->update([
+        $sucursal->Nombre = $data['nombre'],
+        $sucursal->Direccion = $data['direccion'],
+        $sucursal->Correos = $data['correo']
+        ]);
+        return redirect()->route('gerente.sucursal.index');
+
     }
 
     /**

@@ -8,6 +8,33 @@
 </head>
 <body>
     <h1>Sucursal</h1>
-    <a href="gerente.sucursal.create">Formulario</a>
+    <a href="{{route('gerente.sucursal.create')}}">Formulario</a>
+    <br><br>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre Sucursal</th>
+                <th>Direccion</th>
+                <th>Correo electronico</th>
+                <th>opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($sucursales as $sucursal)
+                <tr>
+                    <td>{{$sucursal->id}}</td>
+                    <td>{{$sucursal->Nombre}}</td>
+                    <td>{{$sucursal->Direccion}}</td>
+                    <td>{{$sucursal->CorreoS}}</td>
+                    <td>
+                        <a href="{{route('gerente.sucursal.edit',['sucursal'=>$sucursal->id])}}">Modificar</a>
+                    </td>
+                </tr>
+
+            @endforeach
+        </tbody>
+        {{$sucursales->links()}}
+    </table>
 </body>
 </html>

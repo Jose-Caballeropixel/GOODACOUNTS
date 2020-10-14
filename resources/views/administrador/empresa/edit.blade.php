@@ -7,9 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="{{route('empresa.index')}}">volver</a>
+    <a href="{{route('administrador.empresa.index')}}">volver</a>
     <h1>Formulario de empresa</h1>
-    <form action="{{route('empresa.update',['empresa'=>$empresa->id])}}" method="POST">
+    <form action="{{route('administrador.empresa.update',['empresa'=>$empresa->id])}}" method="POST">
         @method('PUT')
         @csrf
         <label for="">NIT</label>
