@@ -31,6 +31,17 @@ Route::post('/empresa','Administrador\EmpresaController@store')->name('administr
 Route::get('/empresa/{empresa}/edit','Administrador\EmpresaController@edit')->name('administrador.empresa.edit');
 Route::put('/empresa/{empresa}','Administrador\EmpresaController@update')->name('administrador.empresa.update');
 //creamos la ruta de actualizar
+<<<<<<< HEAD
+
+
+
+Route::get('/empresa/{empresa}/edit','Administrador\EmpresaController@edit')->name('administrador.empresa.edit');
+Route::put('/empresa/{empresa}','Administrador\EmpresaController@update')->name('administrador.empresa.update');
+
+// Redireccion a Dashboard Segun Rol
+Route::get('/administrador' ,'Administrador\HomeController@index')->name('administrador.index');
+Route::get('/gerente' ,'Gerente\HomeController@index')->name('gerente.index');
+=======
 
 
 Route::get('/administrador' ,'Administrador\HomeController@index')->name('administrador.index');
@@ -43,6 +54,7 @@ Route::get('/', function () {
 });
 
 
+>>>>>>> b19242887f4ff3685b412ae5283c57cb2891dd53
 
 
 
@@ -73,6 +85,10 @@ Route::get('/gerente/usuarios/create', 'Gerente\UserController@create')->name('g
 Route::post('/gerente/usuarios/store', 'Gerente\UserController@store')->name('gerente.usuarios.store');
 
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> b19242887f4ff3685b412ae5283c57cb2891dd53
 Auth::routes();
 
 
