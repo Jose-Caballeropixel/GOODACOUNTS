@@ -46,7 +46,8 @@ export default {
         },
 
         agregarProducto(index){
-            this.listaProductosEntrada.push(this.listaProductos[index])
+            const producto =this.listaProductos[index]
+            console.log(producto[id])
         }
     }
 

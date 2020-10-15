@@ -1954,7 +1954,8 @@ __webpack_require__.r(__webpack_exports__);
       console.log(this.nombre);
     },
     agregarProducto: function agregarProducto(index) {
-      this.listaProductosEntrada.push(this.listaProductos[index]);
+      var producto = this.listaProductos[index];
+      console.log(producto[id]);
     }
   }
 });
