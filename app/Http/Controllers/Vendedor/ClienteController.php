@@ -13,12 +13,27 @@ class ClienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        $clientes = Cliente::latest()->paginate(4);
+        $clientes = Cliente::latest()->paginate(3);
         return view('vendedor.cliente.index',compact('clientes'));
     }
+    public function buscar()
+    {
+        return view('vendedor.cliente.buscador');
+    }
 
+    public function salida(Request $request)
+    {
+        $identificacion = $request->get('identificacion');
+        $clientes = Cliente::where("identificacion",$identificacion)->get();
+        $id = $clientes;
+        if ($id){
+            return view('vendedor.salidas',['cliente'=>$clientes]);
+        }
+
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -51,7 +66,7 @@ class ClienteController extends Controller
         $clientes->correo = $data['correo'];
         $clientes->telefono = $data['telefono'];
         $clientes->save();
-        return redirect()->route('vendedor.cliente.index');
+        return redirect()->route('vendedor.buscar.cliente');
     }
 
     /**

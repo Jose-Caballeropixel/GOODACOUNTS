@@ -9,6 +9,8 @@
 <body>
     <h1>Lista de clientes</h1>
 <a href="{{route('vendedor.cliente.create')}}">Crear Cliente</a>
+<a href="{{route('vendedor.buscador.cliente')}}">Buscar</a>
+    <br><br>
     <br><br>
     <table>
         <thead>

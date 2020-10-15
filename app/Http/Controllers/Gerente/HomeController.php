@@ -3,7 +3,7 @@
 
 
 namespace App\Http\Controllers\Gerente;
-
+use App\Sucursal;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -14,9 +14,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('gerente.index');
+        $nombre = $request->get('nombre');
+        $sucursales = Sucursal::orderBy('id','DESC')->nombre($nombre)->paginate(4);
+        return view('gerente.index',compact('sucursales'));
     }
 
     /**

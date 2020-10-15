@@ -17,8 +17,8 @@ class SucursalController extends Controller
     public function index(Request $request)
     {
         $nombre = $request->get('nombre');
-        $sucursales = Sucursal::orderBy('id' , 'DESC')->nombre($nombre)->get();
-        return view('gerente.sucursal.index',compact('sucursales'));
+        $sucursales = Sucursal::orderBy('id','DESC')->nombre($nombre)->paginate(4);
+        return view('gerente.index',compact('sucursales'));
     }
 
     /**

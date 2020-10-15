@@ -9,10 +9,10 @@
 <body>
     <form action="{{route('bodeguero.proveedor.index')}}" method="GET">
         @csrf
-        <input type="text" placeholder="NIT Proveedor" name="nit">
+        <input type="text" placeholder="N° de identificacion" name="identificacion">
         <input type="hidden" value="{{$bodega->id}}" name="bodega">
         <input type="submit" value="Buscar">
     </form>
-    
+
 </body>
 </html>

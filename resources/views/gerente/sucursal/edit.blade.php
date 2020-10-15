@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>update</h1>
+@extends('dashboard.sidebargerente')
+@section('content')
+<h1>update</h1>
+<div class="container justify-content-center">
     <a href="javascript: history.go(-1)">Volver</a>
     <form action="{{route('gerente.sucursal.update',['sucursal'=>$sucursal->id])}}" method="POST">
         @method('PUT')
@@ -20,5 +14,5 @@
         <input type="text" name="correo" value="{{old('correo') ? old('correo')  :$sucursal->CorreoS}}">
         <button type="submit">Modificar sucursal</button>
     </form>
-</body>
-</html>
+</div>
+@endsection
