@@ -28,12 +28,13 @@ Route::get('/administrador/usuarios/create', 'Administrador\UserController@creat
 Route::post('/administrador/usuarios/store', 'Administrador\UserController@store')->name('administrador.usuarios.store');
 
 // Redireccion a Dashboard Segun Rol
-Route::get('/administrador' ,'Administrador\HomeController@index')->name('administrador.index');
 Route::get('/gerente' ,'Gerente\HomeController@index')->name('gerente.index');
-
-
 Route::get('/administrador' ,'Administrador\HomeController@index')->name('administrador.index');
-Route::get('/gerente' ,'Administrador\HomeController@index')->name('gerente.index');
+Route::get('/vendedor' ,'Vendedor\HomeController@index')->name('vendedor.index');
+Route::get('/bodeguero' ,'Bodeguero\HomeController@index')->name('bodeguero.index');
+Route::get('/proveedor' ,'Proveedor\HomeController@index')->name('proveedor.index');
+
+
 
 
 //rutas del generente para crear productos
@@ -63,7 +64,7 @@ Route::get('/gerente/bodega','Gerente\BodegaController@index')->name('gerente.bo
 Route::get('/gerente/bodega/create/{sucursal}','Gerente\BodegaController@crearBodega')->name('gerente.bodega.create');
 Route::post('/gerente/bodega/store','Gerente\BodegaController@store')->name('gerente.bodega.store');
 
-//rutas para crear clientes
+//rutas de vendedor para crear clientes
 Route::get('vendedor/cliente','Vendedor\ClienteController@index')->name('vendedor.cliente.index');
 Route::get('vendedor/cliente/create','Vendedor\ClienteController@create')->name('vendedor.cliente.create');
 Route::post('vendedor/cliente/store','Vendedor\ClienteController@store')->name('vendedor.cliente.store');
