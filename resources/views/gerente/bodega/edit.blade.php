@@ -7,6 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>updateBodega</h1>
+    <h1>Editar Bodega</h1>
+    <a href="javascript: history.go(-1)">Volver</a>
+    <form action="{{route('gerente.bodega.update',['bodega'=>$bodega->id])}}" method="POST">
+        @method('PUT')
+        @csrf
+        <label for="">Encargado</label>
+        <input type="text" name="encargado" value="{{$bodega->Encargado}}">
+        <label for="">Direccion de Bodega</label>
+        <input type="text" name="direccion" value="{{$bodega->direccionB}}">
+
+        <button type="submit">Registrar Bodega</button>
+    </form>
 </body>
 </html>

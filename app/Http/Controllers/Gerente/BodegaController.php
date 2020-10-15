@@ -71,7 +71,7 @@ class BodegaController extends Controller
 
     public function buscadorProveedor(Bodega $bodega)
     {
-        
+
         return view('gerente.bodega.buscador',compact('bodega'));
     }
     /**
@@ -82,7 +82,7 @@ class BodegaController extends Controller
      */
     public function edit(Bodega $bodega)
     {
-        //
+        return view('gerente.bodega.edit',compact('bodega'));
     }
 
     /**
@@ -94,7 +94,16 @@ class BodegaController extends Controller
      */
     public function update(Request $request, Bodega $bodega)
     {
-        //
+        $data = $request->validate([
+            'encargado' => 'required',
+            'direccion' => 'required',
+
+        ]);
+        $bodega->update([
+            $bodega->Encargado = $data['encargado'],
+            $bodega->direccionB = $data['direccion']
+        ]);
+        return redirect()->route('gerente.bodega.index');
     }
 
     /**

@@ -7,6 +7,7 @@
     <title>Bodega</title>
 </head>
 <body>
+    <a href="javascript: history.go(-1)">Volver</a>
     <a href="{{route('gerente.bodega.buscador',['bodega'=>$bodega->id])}}">Agregar Productos</a>
 </body>
 </html>

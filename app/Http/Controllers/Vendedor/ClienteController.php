@@ -47,11 +47,11 @@ class ClienteController extends Controller
         $clientes = new Cliente();
         $clientes->nombre = $data['nombre'];
         $clientes->apellidos = $data['apellido'];
-        $clientes->identificacion = $data['indentificacion'];
+        $clientes->identificacion = $data['identificacion'];
         $clientes->correo = $data['correo'];
         $clientes->telefono = $data['telefono'];
         $clientes->save();
-        return redirect()->route('vendedo.cliente.index');
+        return redirect()->route('vendedor.cliente.index');
     }
 
     /**
@@ -97,10 +97,11 @@ class ClienteController extends Controller
         $cliente->update([
             $cliente->nombre = $data['nombre'],
             $cliente->apellidos = $data['apellido'],
-            $cliente->identificacion = $data['indentificacion'],
+            $cliente->identificacion = $data['identificacion'],
             $cliente->correo = $data['correo'],
             $cliente->telefono = $data['telefono'],
         ]);
+        return redirect()->route('vendedor.cliente.index');
     }
 
     /**

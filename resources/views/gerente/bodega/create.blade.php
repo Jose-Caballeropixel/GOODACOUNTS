@@ -12,7 +12,7 @@
     <form action="{{route('gerente.bodega.store')}}" method="POST">
         @csrf
         <label for="">Encargado</label>
-        <input type="text" name="encargado">
+        <input type="text" name="encargado" >
         <label for="">Direccion de Bodega</label>
         <input type="text" name="direccion">
         <input type="hidden" value="{{$sucursal->id}}" name="sucursal_id">

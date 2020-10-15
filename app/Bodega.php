@@ -9,8 +9,8 @@ class Bodega extends Model
     protected $fillable = ['Encardo','direccionB'];
 
 
-    public function sucursals()
+    public function sucursal()
     {
-        return $this->hasOne(Sucursal::class);
+        return $this->belongsTo(Sucursal::class);
     }
 }

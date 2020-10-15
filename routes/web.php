@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 //creamos las rutas principales para el administrador
 
-Route::get('/','Administrador\EmpresaController@index')->name('administrador.empresa.index');
+Route::get('/administrador','Administrador\EmpresaController@index')->name('administrador.empresa.index');
 Route::get('/administrador/empresa/create','Administrador\EmpresaController@create')->name('administrador.empresa.create');
 Route::post('/administrador/empresa','Administrador\EmpresaController@store')->name('administrador.empresa.store');
 //creamos la ruta de actualizar
@@ -63,20 +63,13 @@ Route::put('/gerente/sucursal/{sucursal}','Gerente\SucursalController@update')->
 Route::get('/gerente/bodega','Gerente\BodegaController@index')->name('gerente.bodega.index');
 Route::get('/gerente/bodega/create/{sucursal}','Gerente\BodegaController@crearBodega')->name('gerente.bodega.create');
 Route::post('/gerente/bodega/store','Gerente\BodegaController@store')->name('gerente.bodega.store');
-
-<<<<<<< HEAD
+Route::get('/gerente/bodega/edit/{bodega}','Gerente\BodegaController@edit')->name('gerente.bodega.edit');
+Route::put('/gerente/bodega/update/{bodega}','Gerente\BodegaController@update')->name('gerente.bodega.update');
 Route::get('/gerente/bodega/{bodega}/show','Gerente\BodegaController@show')->name('gerente.bodega.show');
 Route::get('/gerente/bodega/{bodega}/buscador','Gerente\BodegaController@buscadorProveedor')->name('gerente.bodega.buscador');
 
-//Ruta de proveedor
-Route::get('/bodeguero','Bodeguero\ProveedorController@buscar')->name('bodeguero.proveedor.index');
 
-
-
-//rutas para crear clientes
-=======
-//rutas de vendedor para crear clientes
->>>>>>> 23cab1ada5734456fc11a74d3b016db2d7b3ebe9
+//rutas de vendedor para crear clientes--terminado
 Route::get('vendedor/cliente','Vendedor\ClienteController@index')->name('vendedor.cliente.index');
 Route::get('vendedor/cliente/create','Vendedor\ClienteController@create')->name('vendedor.cliente.create');
 Route::post('vendedor/cliente/store','Vendedor\ClienteController@store')->name('vendedor.cliente.store');

@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+    <a href="{{route('gerente.producto.index')}}">Volver</a>
     <div class="row justify-content-center">
         <div class="col-md-8">
 

@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+    <a href="javascript: history.go(-1)">Volver</a>
     <div class="row justify-content-center">
         <div class="col-md-8">
 

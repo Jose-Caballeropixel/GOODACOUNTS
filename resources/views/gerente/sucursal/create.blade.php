@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>formulario</h1>
+    <a href="javascript: history.go(-1)">Volver</a>
     <form action="{{route('gerente.sucursal.store')}}" method="POST">
         @csrf
         <label for="">Nombre sucursal: </label>

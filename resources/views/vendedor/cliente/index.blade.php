@@ -8,11 +8,12 @@
 </head>
 <body>
     <h1>Lista de clientes</h1>
-
+<a href="{{route('vendedor.cliente.create')}}">Crear Cliente</a>
     <br><br>
     <table>
         <thead>
             <tr>
+                <td>#</td>
                 <td>Nombre</td>
                 <td>Apellido</td>
                 <td>N° Identificacion</td>
@@ -30,6 +31,9 @@
                     <td>{{$cliente->identificacion}}</td>
                     <td>{{$cliente->correo}}</td>
                     <td>{{$cliente->telefono}}</td>
+                    <td>
+                        <a href="{{route('vendedor.cliente.edit',['cliente'=>$cliente->id])}}">Modificar</a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

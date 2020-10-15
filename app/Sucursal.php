@@ -9,9 +9,9 @@ class Sucursal extends Model
     //creamos los atributos de la clase sucursal
     protected $fillable = ['Nombre','Direccion','Correo'];
 
-    public function bodegas()
+    public function bodega()
     {
-        return $this->belongsTo(Bodega::class);
+        return $this->hasOne(Bodega::class);
     }
 
     public function scopeNombre($query, $nombre)

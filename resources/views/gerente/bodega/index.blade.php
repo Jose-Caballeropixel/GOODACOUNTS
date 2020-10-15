@@ -24,9 +24,9 @@
                     <td>{{$bodega->id}}</td>
                     <td>{{$bodega->Encargado}}</td>
                     <td>{{$bodega->direccionB}}</td>
-                    <td>{{$bodega->sucursal_id}}</td>
+                    <td>{{$bodega->sucursal->Nombre}}</td>
                     <td>
-                        <a href="">Modificar</a>
+                        <a href="{{route('gerente.bodega.edit',['bodega'=>$bodega->id])}}">Modificar</a>
                         <a href="{{route('gerente.bodega.show',['bodega'=>$bodega->id])}}">Ver</a>
                     </td>
                 </tr>
