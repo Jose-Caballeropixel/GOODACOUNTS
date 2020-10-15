@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers\Bodeguero;
 
+use App\Bodega;
 use App\Producto;
+use App\Proveedor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class EntradaController extends Controller
 {
-    public function index()
+    public function index(Bodega $bodega,Proveedor $proveedor)
     {
-        return view('bodeguero.entrada');
+        
+        return view('bodeguero.entrada',compact('bodega','proveedor'));
     }
 
     public function buscar(Request $request)

@@ -47,7 +47,7 @@ Route::post('gerente/producto/store', 'Gerente\ProductoController@store')->name(
 Route::post('gerente/producto/buscar', 'Gerente\ProductoController@buscar')->name('gerente.producto.buscar');
 
 //Rutas de bodeguero
-Route::get('/bodeguero/entrada', 'Bodeguero\EntradaController@index')->name('bodeguero.entrada');
+Route::get('/bodeguero/entrada/{proveedor}/{bodega}', 'Bodeguero\EntradaController@index')->name('bodeguero.entrada');
 Route::post('/bodeguero/buscar/producto', 'Bodeguero\EntradaController@buscar')->name('bodeguero.entrada.buscar');
 
 
@@ -58,10 +58,18 @@ Route::post('/gerente/sucursal/store','Gerente\SucursalController@store')->name(
 Route::get('/gerente/sucursal/{sucursal}/edit','Gerente\SucursalController@edit')->name('gerente.sucursal.edit');
 Route::put('/gerente/sucursal/{sucursal}','Gerente\SucursalController@update')->name('gerente.sucursal.update');
 
-// ruta para crear bodegas
+// ruta para crear bodegas y de buscador de proveedor
 Route::get('/gerente/bodega','Gerente\BodegaController@index')->name('gerente.bodega.index');
 Route::get('/gerente/bodega/create/{sucursal}','Gerente\BodegaController@crearBodega')->name('gerente.bodega.create');
 Route::post('/gerente/bodega/store','Gerente\BodegaController@store')->name('gerente.bodega.store');
+
+Route::get('/gerente/bodega/{bodega}/show','Gerente\BodegaController@show')->name('gerente.bodega.show');
+Route::get('/gerente/bodega/{bodega}/buscador','Gerente\BodegaController@buscadorProveedor')->name('gerente.bodega.buscador');
+
+//Ruta de proveedor
+Route::get('/bodeguero','Bodeguero\ProveedorController@buscar')->name('bodeguero.proveedor.index');
+
+
 
 //rutas para crear clientes
 Route::get('vendedor/cliente','Vendedor\ClienteController@index')->name('vendedor.cliente.index');

@@ -13,4 +13,11 @@ class Sucursal extends Model
     {
         return $this->belongsTo(Bodega::class);
     }
+
+    public function scopeNombre($query, $nombre)
+    {
+        if ($nombre) {
+            return $query->where('Nombre','LIKE',"%$nombre%");
+        }
+    }
 }
