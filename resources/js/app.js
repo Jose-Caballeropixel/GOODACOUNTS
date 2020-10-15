@@ -21,7 +21,6 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('entrada-producto', require('./components/EntradaProducto.vue').default);
-Vue.component('salida-producto', require('./components/SalidaProducto.vue').default);
 
 
 

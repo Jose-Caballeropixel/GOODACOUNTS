@@ -1,13 +1,15 @@
-@extends('layouts.app')
+@extends('dashboard.sidebargerente')
 
 @section('content')
 <div class="container">
-    <div class=" justify-content-center">
+    <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+            <div class="">
+                <h1 class="text-center">
+                    Nuevo usuario
+                </h1>
 
-                <div class="card-body">
+                <div class="">
                     <form method="POST" action="{{ route('gerente.usuarios.store') }}">
                         @csrf
 

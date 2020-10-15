@@ -90,7 +90,6 @@ export default {
         .catch((error) => console.log(error));
     },
 
-    methods:{
         buscarProducto(){
             const params = {
                 'nombre' : this.nombre
@@ -116,6 +115,15 @@ export default {
          });
             localStorage.setItem('entrada-bodega', JSON.stringify(this.listaProductosEntrada))
         },
+        terminarEntrada(){
+            localStorage.removeItem('entrada-bodega');
+
+            axios.post('/bodeguero/agregar/entrada', this.listaProductosEntrada)
+            .then(repuesta => {
+
+            })
+            .catch(error => console.log(error));
+        },
         eliminarProducto(index){
             this.listaProductosEntrada.splice(index,1)
             localStorage.setItem('entrada-bodega', JSON.stringify(this.listaProductosEntrada))
@@ -132,13 +140,6 @@ export default {
   mounted: function(){
 
             console.log(this.nombre)
-
   }
   }
-<<<<<<< HEAD
-
-=======
-  }
-}
->>>>>>> 6eb24748a3761c6a2bec16fee4db27b5f21f9a9c
 </script>

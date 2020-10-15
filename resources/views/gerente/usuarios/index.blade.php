@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container">
-        <a href="{{ route('administrador.usuarios.create') }}">Crear Usuario</a>
+        <a href="{{ route('gerente.usuarios.create') }}">Crear Usuario</a>
         <h1 class="text-center">Usuarios</h1>
         <table class="table mt-4">
             <thead>

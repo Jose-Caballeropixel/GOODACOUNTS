@@ -4,7 +4,7 @@
     <div class="container">
         <h1 class="text-center">Gestor Bodegas</h1>
         <div class="btn-crear-bodega d-flex float-right mb-3">
-            <a class="btn btn-outline-dark" href="{{ route('gerente.bodega.create') }}">Crear <li class="fas fa-plus"></li>
+            <a class="btn btn-outline-dark" href="">Crear <li class="fas fa-plus"></li>
                 </a>
         </div>
         <table class="table mt-4">

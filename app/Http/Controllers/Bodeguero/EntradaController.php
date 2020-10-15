@@ -9,16 +9,23 @@ use App\Proveedor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-
 class EntradaController extends Controller
 {
     public function index(Request $request)
     {
         $bodegaId= intval($request->get('bodega'));
-        $nit= $request->get('nit');
-        $proveedor= Proveedor::where('NIT',$nit)->find(1);
-        $bodega= Bodega::where('id',$bodegaId)->get(1);
+        $nit= $request->get('identificacion');
+        $proveedor= Proveedor::where('NIT',$nit)->get();
+        $bodega= Bodega::where('id',$bodegaId)->get();
+
+        if(count($proveedor)==0){
+             echo 'Este proveedor no existe por favor crealo';
+
+
+        }else{
         return view('bodeguero.entrada',compact('bodega','proveedor'));
+
+        }
     }
 
     public function buscar(Request $request)
@@ -39,6 +46,6 @@ class EntradaController extends Controller
             $contador++;
         }
 
-        return response()->json('mensaje','Entradas Agreagadas Correctamente');
+        return response()->json('mensaje','todo correcto, y yo que me alegro');
     }
 }

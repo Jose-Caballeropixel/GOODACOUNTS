@@ -43,9 +43,9 @@
                 <a href="{{ route('gerente.producto.index') }}">
                     <li class="fas fa-tags"></li> <span>Productos</span>
                 </a>
-                {{-- <a href="{{ route('gerente.usuarios.index') }}">
+                <a href="{{ route('gerente.usuarios.index') }}">
                     <li class="fas fa-users"></li> <span>Usuarios</span>
-                </a> --}}
+                </a>
                 {{-- <a href="">
                     <li class="fas fa-address-book"></li> <span>Proveedores</span>
                 </a> --}}

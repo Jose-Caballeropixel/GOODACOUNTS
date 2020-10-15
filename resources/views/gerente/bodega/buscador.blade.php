@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <form action="{{route('bodeguero.entrada')}}" method="GET">
-        @csrf
-        <input type="text" placeholder="N° de identificacion" name="identificacion">
-        <input type="hidden" value="{{$bodega->id}}" name="bodega">
-        <input type="submit" value="Buscar">
-    </form>
+@extends('dashboard.sidebargerente')
 
-</body>
-</html>
+@section('content')
+     <div class="container">
+         <h1 class="text-center">Buscar Proveedor</h1>
+        <form action="{{route('bodeguero.entrada')}}" method="GET">
+            @csrf
+            <div class="form-group">
+                <input type="text" placeholder="N° de identificacion" name="identificacion" class="form-control">
+                <input type="hidden" value="{{$bodega->id}}" name="bodega" class="">
+            </div>
+            <input type="submit" value="Buscar" class="btn btn-primary">
+        </form>
+     </div>
+@endsection

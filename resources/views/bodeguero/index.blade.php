@@ -1,4 +1,4 @@
-@extends('dashboard.sidebarbodega')
+@extends('dashboard.sidebarvendedor')
 
 @section('content')
     <div class="container">

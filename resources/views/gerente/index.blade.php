@@ -14,7 +14,7 @@
                     </a>
                 </div>
                 <div class="col-sm-12 col-lg-4">
-                    <a href="" class="p-5 text-decoration-none">
+                    <a href="{{route('gerente.bodega.index')}}" class="p-5 text-decoration-none">
                         <img src="{{ asset('/img/cava.png') }}" alt="" width="70">
                         <h5 class="mt-2 ml-5">Ver Bodegas</h5>
                     </a>
