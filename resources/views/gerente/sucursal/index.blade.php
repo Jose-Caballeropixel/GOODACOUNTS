@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-@extends('dashboard.sidebargerente')
-
-@section('content')
-    <a class="btn-crear-sucursal btn" href="{{ route('gerente.sucursal.create') }}">Crear Sucursal</a>
-    <br><br>
-    <div class="table tabla-container">
-        <h1 class="text-center">Sucursal</h1>
-        <table class="tabla mt-5 table-responsive">
-            <thead>
-=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +27,6 @@
         </thead>
         <tbody>
             @foreach ($sucursales as $sucursal)
->>>>>>> ebfd4cc242d2a2a84b1107b173ab1e919a457a16
                 <tr>
                     <th>#</th>
                     <th>Nombre Sucursal</th>

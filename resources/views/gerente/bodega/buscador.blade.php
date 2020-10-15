@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="{{route('bodeguero.proveedor.index')}}" method="GET">
+    <form action="{{route('bodeguero.entrada')}}" method="GET">
         @csrf
         <input type="text" placeholder="N° de identificacion" name="identificacion">
         <input type="hidden" value="{{$bodega->id}}" name="bodega">
