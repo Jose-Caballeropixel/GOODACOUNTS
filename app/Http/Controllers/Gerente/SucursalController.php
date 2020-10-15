@@ -14,9 +14,10 @@ class SucursalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $sucursales = Sucursal::latest()->paginate(4);
+        $nombre = $request->get('nombre');
+        $sucursales = Sucursal::orderBy('id' , 'DESC')->nombre($nombre)->get();
         return view('gerente.sucursal.index',compact('sucursales'));
     }
 

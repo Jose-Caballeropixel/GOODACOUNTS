@@ -9,8 +9,12 @@
 <body>
     <h1>Sucursal</h1>
     <a href="{{route('gerente.sucursal.create')}}">Formulario</a>
-    <a href="{{route('gerente.bodega.index')}}">Lista de socursales</a>
+    <a href="{{route('gerente.bodega.index')}}">Lista de bodegas</a>
     <br><br>
+    <form action="{{route('gerente.sucursal.index')}}" method="GET">
+        <input type="text" name="nombre" placeholder="Sucursal">
+        <input type="submit" value="Buscar">
+    </form>
     <table>
         <thead>
             <tr>

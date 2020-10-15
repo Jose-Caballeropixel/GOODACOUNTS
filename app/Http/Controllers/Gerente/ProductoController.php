@@ -14,9 +14,11 @@ class ProductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $productos = Producto::latest()->paginate(10);
+    
+        $nombre = $request->get('nombreP');
+        $productos = Producto::orderBy('id','DESC')->nombre($nombre)->get();
         return view('gerente.producto.index', compact('productos'));
     }
 

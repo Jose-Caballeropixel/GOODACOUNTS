@@ -28,12 +28,13 @@ Route::get('/administrador/usuarios/create', 'Administrador\UserController@creat
 Route::post('/administrador/usuarios/store', 'Administrador\UserController@store')->name('administrador.usuarios.store');
 
 // Redireccion a Dashboard Segun Rol
-Route::get('/administrador' ,'Administrador\HomeController@index')->name('administrador.index');
 Route::get('/gerente' ,'Gerente\HomeController@index')->name('gerente.index');
-
-
 Route::get('/administrador' ,'Administrador\HomeController@index')->name('administrador.index');
-Route::get('/gerente' ,'Administrador\HomeController@index')->name('gerente.index');
+Route::get('/vendedor' ,'Vendedor\HomeController@index')->name('vendedor.index');
+Route::get('/bodeguero' ,'Bodeguero\HomeController@index')->name('bodeguero.index');
+Route::get('/proveedor' ,'Proveedor\HomeController@index')->name('proveedor.index');
+
+
 
 
 //rutas del generente para crear productos
@@ -52,18 +53,27 @@ Route::post('/bodeguero/buscar/producto', 'Bodeguero\EntradaController@buscar')-
 
 
 // rutas del gerente para crear sucursales
-Route::get('/gerente','Gerente\SucursalController@index')->name('gerente.sucursal.index');
+Route::get('/gerente/sucursal','Gerente\SucursalController@index')->name('gerente.sucursal.index');
 Route::get('/gerente/sucursal/create','Gerente\SucursalController@create')->name('gerente.sucursal.create');
 Route::post('/gerente/sucursal/store','Gerente\SucursalController@store')->name('gerente.sucursal.store');
 Route::get('/gerente/sucursal/{sucursal}/edit','Gerente\SucursalController@edit')->name('gerente.sucursal.edit');
 Route::put('/gerente/sucursal/{sucursal}','Gerente\SucursalController@update')->name('gerente.sucursal.update');
 
-// ruta para crear bodegas
+// ruta para crear bodegas y de buscador de proveedor
 Route::get('/gerente/bodega','Gerente\BodegaController@index')->name('gerente.bodega.index');
 Route::get('/gerente/bodega/create/{sucursal}','Gerente\BodegaController@crearBodega')->name('gerente.bodega.create');
 Route::post('/gerente/bodega/store','Gerente\BodegaController@store')->name('gerente.bodega.store');
 
+
+Route::get('/gerente/bodega/{bodega}/show','Gerente\BodegaController@show')->name('gerente.bodega.show');
+Route::get('/gerente/bodega/{bodega}/buscador','Gerente\BodegaController@buscadorProveedor')->name('gerente.bodega.buscador');
+
+//Ruta de proveedor
+
+
+
 //rutas para crear clientes
+
 Route::get('vendedor/cliente','Vendedor\ClienteController@index')->name('vendedor.cliente.index');
 Route::get('vendedor/cliente/create','Vendedor\ClienteController@create')->name('vendedor.cliente.create');
 Route::post('vendedor/cliente/store','Vendedor\ClienteController@store')->name('vendedor.cliente.store');
