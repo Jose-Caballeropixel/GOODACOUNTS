@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
         integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
         crossorigin="anonymous" />
-    <link rel="stylesheet" href="{{ asset('css/estilosadmin.css') }}">
 </head>
 
 <body>
@@ -34,38 +33,33 @@
     <div class="contenido-general">
         <div class="sidebar">
             <div class="titul">
-<<<<<<< HEAD
-                <a href="{{ route('gerente.sucursal.create') }}">
-                    <li class="fas fa-store-alt"></li> <span>Sucursales</span>
-=======
-                <a href="{{ route('gerente.index') }}">
+                <a href="{{ route('vendedor.index') }}">
                     <li class="fas fa-tachometer-alt"></li> <span>Tablero</span>
->>>>>>> 6eb24748a3761c6a2bec16fee4db27b5f21f9a9c
                 </a>
-                <a href="{{ route('gerente.bodega.index') }}">
+                {{-- <a href="{{ route('gerente.bodega.index') }}">
                     <li class="fas fa-box"></li> <span>Bodegas</span>
-                </a>
-                <a href="{{ route('gerente.producto.index') }}">
+                </a> --}}
+                {{-- <a href="{{ route('gerente.producto.index') }}">
                     <li class="fas fa-tags"></li> <span>Productos</span>
+                </a> --}}
+                <a href="{{ route('vendedor.cliente.index') }}">
+                    <li class="fas fa-users"></li> <span>Cliente</span>
                 </a>
-                {{-- <a href="{{ route('gerente.usuarios.index') }}">
-                    <li class="fas fa-users"></li> <span>Usuarios</span>
-                </a> --}}
-                {{-- <a href="">
+                {{-- {{-- <a href="">
                     <li class="fas fa-address-book"></li> <span>Proveedores</span>
-                </a> --}}
-                {{-- <a href="">
-                    <li class="fas fa-shopping-bag"></li> <span>Ventas</span>
-                </a> --}}
-                {{-- <a href="">
-                    <li class="fas fa-boxes"></li> <span>Pedidos</span>
-                </a> --}}
-                <a href="{{route('gerente.sucursal.index')}}">
-                    <li class="fas fa-store-alt"></li> <span>Sucursales</span>
                 </a>
                 <a href="">
-                    <li class="fas fa-sign-out-alt"></li> <span>Salir</span>
+                    <li class="fas fa-shopping-bag"></li> <span>Ventas</span>
                 </a>
+                <a href="">
+                    <li class="fas fa-boxes"></li> <span>Pedidos</span>
+                </a> --}}
+                <a href="">
+                <li class="fas fa-store-alt"></li> <span>Sucursales</span>
+                </a>
+                {{-- <a href="">
+                    <li class="fas fa-sign-out-alt"></li> <span>Salir</span>
+                </a> --}}
             </div>
         </div>
 

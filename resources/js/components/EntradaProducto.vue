@@ -90,19 +90,7 @@ export default {
         .catch((error) => console.log(error));
     },
 
-    agregarProducto(index) {
-        const producto = this.listaProductos[index];
-        this.listaProductosEntrada.push({
-        bodega_id: this.bodega,
-        nombre: producto.nombre,
-        producto_id: producto.id,
-        cantidad: this.cantidad,
-        valor_compra: this.valorCompra,
-        proveedor_id: this.proveedor,
-         });
-
-            localStorage.setItem('entrada-bodega', JSON.stringify(this.listaProductosEntrada))
-        },
+    methods:{
         buscarProducto(){
             const params = {
                 'nombre' : this.nombre
@@ -111,23 +99,27 @@ export default {
             .then(respusta=> {
                 this.listaProductos = ''
                this.listaProductos= respusta.data;
+                console.log(this.listaProductos)
             })
             .catch(error => console.log(error))
             console.log(this.nombre)
         },
-
+        agregarProducto(index) {
+        const producto = this.listaProductos[index];
+        this.listaProductosEntrada.push({
+        bodega_id: 1,
+        nombre: producto.nombre,
+        producto_id: producto.id,
+        cantidad: this.cantidad,
+        valor_compra: this.valorCompra,
+        proveedor_id: 1,
+         });
+            localStorage.setItem('entrada-bodega', JSON.stringify(this.listaProductosEntrada))
+        },
         eliminarProducto(index){
             this.listaProductosEntrada.splice(index,1)
             localStorage.setItem('entrada-bodega', JSON.stringify(this.listaProductosEntrada))
-        },
-        terminarEntrada(){
-           axios.post('/bodeguero/agregar/entrada',this.listaProductosEntrada)
-            .then(respusta=> {
-                console.log(respusta)
-            })
-            .catch(error => console.log(error))
-        },
-
+        }
   },
   created: function () {
       let datosDB = JSON.parse(localStorage.getItem('entrada-bodega'))
@@ -143,5 +135,10 @@ export default {
 
   }
   }
+<<<<<<< HEAD
 
+=======
+  }
+}
+>>>>>>> 6eb24748a3761c6a2bec16fee4db27b5f21f9a9c
 </script>

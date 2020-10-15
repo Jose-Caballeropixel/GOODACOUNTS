@@ -21,8 +21,8 @@
                     <label for="">Correo:</label>
                     <input type="email" class="form-control" name="correo">
                 </div>
-                <div class="btn-form form-group">
-                    <button class="btn btn-guardar">Guardar Empresa</button>
+                <div class="d-flex justify-content-center">
+                    <button class="btn btn-outline-primary btn-guardar">Guardar Empresa</button>
                 </div>
             </form>
         </div>

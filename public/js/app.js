@@ -2003,6 +2003,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         return console.log(error);
       });
     },
+<<<<<<< HEAD
     agregarProducto: function agregarProducto(index) {
       var producto = this.listaProductos[index];
       this.listaProductosEntrada.push({
@@ -2045,6 +2046,49 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.tareas = [];
     } else {
       this.listaProductosEntrada = datosDB;
+=======
+    methods: {
+      buscarProducto: function buscarProducto() {
+        var _this2 = this;
+
+        var params = {
+          'nombre': this.nombre
+        };
+        axios.post('/bodeguero/buscar/producto', params).then(function (respusta) {
+          _this2.listaProductos = '';
+          _this2.listaProductos = respusta.data;
+          console.log(_this2.listaProductos);
+        })["catch"](function (error) {
+          return console.log(error);
+        });
+        console.log(this.nombre);
+      },
+      agregarProducto: function agregarProducto(index) {
+        var producto = this.listaProductos[index];
+        this.listaProductosEntrada.push({
+          bodega_id: 1,
+          nombre: producto.nombre,
+          producto_id: producto.id,
+          cantidad: this.cantidad,
+          valor_compra: this.valorCompra,
+          proveedor_id: 1
+        });
+        localStorage.setItem('entrada-bodega', JSON.stringify(this.listaProductosEntrada));
+      },
+      eliminarProducto: function eliminarProducto(index) {
+        this.listaProductosEntrada.splice(index, 1);
+        localStorage.setItem('entrada-bodega', JSON.stringify(this.listaProductosEntrada));
+      }
+    },
+    created: function created() {
+      var datosDB = JSON.parse(localStorage.getItem('entrada-bodega'));
+
+      if (datosDB === null) {
+        this.tareas = [];
+      } else {
+        this.listaProductosEntrada = datosDB;
+      }
+>>>>>>> 6eb24748a3761c6a2bec16fee4db27b5f21f9a9c
     }
   },
   mounted: function mounted() {

@@ -17,7 +17,7 @@ class EntradaController extends Controller
         $bodegaId= intval($request->get('bodega'));
         $nit= $request->get('nit');
         $proveedor= Proveedor::where('NIT',$nit)->find(1);
-        $bodega= Bodega::where('id',$bodegaId)->get();
+        $bodega= Bodega::where('id',$bodegaId)->get(1);
         return view('bodeguero.entrada',compact('bodega','proveedor'));
     }
 
