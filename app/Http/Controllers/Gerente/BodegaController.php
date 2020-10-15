@@ -66,9 +66,14 @@ class BodegaController extends Controller
      */
     public function show(Bodega $bodega)
     {
-        //
+        return view('gerente.bodega.show',compact('bodega'));
     }
 
+    public function buscadorProveedor(Bodega $bodega)
+    {
+        
+        return view('gerente.bodega.buscador',compact('bodega'));
+    }
     /**
      * Show the form for editing the specified resource.
      *

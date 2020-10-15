@@ -1,5 +1,7 @@
 <?php
 
+
+
 namespace App\Http\Controllers\Gerente;
 
 use App\Http\Controllers\Controller;
