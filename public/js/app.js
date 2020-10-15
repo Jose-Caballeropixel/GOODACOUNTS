@@ -1929,12 +1929,56 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      nombre: '',
-      listaProductos: '',
-      listaProductosEntrada: null
+      nombre: "",
+      listaProductos: [],
+      listaProductosEntrada: [],
+      listaProductosDetalle: [],
+      cantidad: 0,
+      valorCompra: 0
     };
   },
   methods: {
@@ -1942,19 +1986,41 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var params = {
-        'nombre': this.nombre
+        nombre: this.nombre
       };
-      axios.post('/bodeguero/buscar/producto', params).then(function (respusta) {
-        _this.listaProductos = '';
+      axios.post("/bodeguero/buscar/producto", params).then(function (respusta) {
+        _this.listaProductos = [];
         _this.listaProductos = respusta.data;
         console.log(_this.listaProductos);
+        _this.nombre = "";
       })["catch"](function (error) {
         return console.log(error);
       });
-      console.log(this.nombre);
     },
     agregarProducto: function agregarProducto(index) {
-      this.listaProductosEntrada.push(this.listaProductos[index]);
+      var producto = this.listaProductos[index];
+      this.listaProductosEntrada.push({
+        bodega_id: 1,
+        nombre: producto.nombre,
+        producto_id: producto.id,
+        cantidad: this.cantidad,
+        valor_compra: this.valorCompra,
+        proveedor_id: 1
+      });
+      localStorage.setItem('entrada-bodega', JSON.stringify(this.listaProductosEntrada));
+    },
+    eliminarProducto: function eliminarProducto(index) {
+      this.listaProductosEntrada.splice(index, 1);
+      localStorage.setItem('entrada-bodega', JSON.stringify(this.listaProductosEntrada));
+    }
+  },
+  created: function created() {
+    var datosDB = JSON.parse(localStorage.getItem('entrada-bodega'));
+
+    if (datosDB === null) {
+      this.tareas = [];
+    } else {
+      this.listaProductosEntrada = datosDB;
     }
   }
 });
@@ -37584,64 +37650,201 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("input", {
-      directives: [
-        {
-          name: "model",
-          rawName: "v-model",
-          value: _vm.nombre,
-          expression: "nombre"
-        }
-      ],
-      attrs: { type: "text", name: "", id: "" },
-      domProps: { value: _vm.nombre },
-      on: {
-        input: function($event) {
-          if ($event.target.composing) {
-            return
-          }
-          _vm.nombre = $event.target.value
-        }
-      }
-    }),
-    _vm._v(" "),
-    _c("button", { on: { click: _vm.buscarProducto } }, [_vm._v("Busacar")]),
-    _vm._v(" "),
-    _c("div", { staticClass: "elementos conatiner" }, [
+  return _c("div", { staticClass: "container-fluid" }, [
+    _c("div", { staticClass: "row" }, [
       _c(
         "div",
-        { staticClass: "row" },
-        _vm._l(_vm.listaProductos, function(producto, index) {
-          return _c("div", { key: index, staticClass: "col-md-4" }, [
-            _c("h1", [_vm._v(_vm._s(producto.nombre))]),
-            _vm._v(" "),
-            _c("p", [_vm._v("Precio de venta: " + _vm._s(producto.precio))]),
-            _vm._v(" "),
-            _c("p", [_vm._v("Codigo: " + _vm._s(producto.codigo))]),
-            _vm._v(" "),
-            _c(
-              "button",
+        { staticClass: "col-md-4" },
+        [
+          _c("input", {
+            directives: [
               {
-                staticClass: "btn btn-success w-100",
-                on: {
-                  click: function($event) {
-                    return _vm.agregarProducto(index)
-                  }
+                name: "model",
+                rawName: "v-model",
+                value: _vm.nombre,
+                expression: "nombre"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { type: "text", name: "", id: "" },
+            domProps: { value: _vm.nombre },
+            on: {
+              keyup: function($event) {
+                if (
+                  !$event.type.indexOf("key") &&
+                  _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                ) {
+                  return null
                 }
+                return _vm.buscarProducto($event)
               },
-              [_vm._v("Agregar producto")]
-            )
-          ])
-        }),
-        0
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "factura container" })
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.nombre = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-primary mt-2",
+              on: { click: _vm.buscarProducto }
+            },
+            [_vm._v("Busacar")]
+          ),
+          _vm._v(" "),
+          _vm._l(_vm.listaProductos, function(producto, index) {
+            return _c("div", { key: index }, [
+              _c("div", { staticClass: "card p-4" }, [
+                _c("h1", [_vm._v(_vm._s(producto.nombre))]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v("Precio de venta: " + _vm._s(producto.precio))
+                ]),
+                _vm._v(" "),
+                _c("p", [_vm._v("Codigo: " + _vm._s(producto.codigo))]),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "" } }, [_vm._v("Cantidad")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.cantidad,
+                      expression: "cantidad"
+                    }
+                  ],
+                  attrs: { type: "number", name: "", id: "" },
+                  domProps: { value: _vm.cantidad },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.cantidad = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "" } }, [_vm._v("Valor compra")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.valorCompra,
+                      expression: "valorCompra"
+                    }
+                  ],
+                  attrs: { step: "any", type: "number", name: "", id: "" },
+                  domProps: { value: _vm.valorCompra },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.valorCompra = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-success w-100 mt-2",
+                    on: {
+                      click: function($event) {
+                        return _vm.agregarProducto(index)
+                      }
+                    }
+                  },
+                  [_vm._v("\n            Agregar producto\n          ")]
+                )
+              ])
+            ])
+          })
+        ],
+        2
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-8" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("table", { staticClass: "table table-responsive" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "tbody",
+            _vm._l(_vm.listaProductosEntrada, function(producto, index) {
+              return _c("tr", { key: index }, [
+                _c("td", [_vm._v(_vm._s(index))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(producto.nombre))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(producto.cantidad))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(producto.valor_compra))]),
+                _vm._v(" "),
+                _c("td", [
+                  _vm._v(_vm._s(producto.cantidad * producto.valor_compra))
+                ]),
+                _vm._v(" "),
+                _c("td", [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-danger btn-sm",
+                      on: {
+                        click: function($event) {
+                          return _vm.eliminarProducto(index)
+                        }
+                      }
+                    },
+                    [_vm._v("X")]
+                  )
+                ])
+              ])
+            }),
+            0
+          )
+        ])
+      ])
+    ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("button", { staticClass: "btn btn-dinfo" }, [_vm._v("Finalizar")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", [_vm._v("N°")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Nombre")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Cantiddad")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Valor unit")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Valor total")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("opciones")])
+    ])
+  }
+]
 render._withStripped = true
 
 
