@@ -14,9 +14,14 @@ class SucursalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+<<<<<<< HEAD
         $sucursales = Sucursal::first()->paginate(4);
+=======
+        $nombre = $request->get('nombre');
+        $sucursales = Sucursal::orderBy('id' , 'DESC')->nombre($nombre)->get();
+>>>>>>> ebfd4cc242d2a2a84b1107b173ab1e919a457a16
         return view('gerente.sucursal.index',compact('sucursales'));
     }
 
@@ -44,13 +49,13 @@ class SucursalController extends Controller
             'correo' => 'required|string',
         ]);
 
-        $sucursales = new Sucursal();
-        $sucursales->Nombre = $data['nombre'];
-        $sucursales->Direccion = $data['direccion'];
-        $sucursales->Correos = $data['correo'];
-        $sucursales->save();
+        $sucursal = new Sucursal();
+        $sucursal->Nombre = $data['nombre'];
+        $sucursal->Direccion = $data['direccion'];
+        $sucursal->Correos = $data['correo'];
+        $sucursal->save();
 
-        return redirect()->route('gerente.sucursal.index');
+        return redirect()->route('gerente.bodega.create',['sucursal'=>$sucursal]);
     }
 
     /**

@@ -501,6 +501,8 @@ class ComposerStaticInitce9ccdd5a6fc48d2dc5a3f295fb1fc43
     );
 
     public static $classMap = array (
+        'App\\Bodega' => __DIR__ . '/../..' . '/app/Bodega.php',
+        'App\\Cliente' => __DIR__ . '/../..' . '/app/Cliente.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Empresa' => __DIR__ . '/../..' . '/app/Empresa.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -513,15 +515,19 @@ class ComposerStaticInitce9ccdd5a6fc48d2dc5a3f295fb1fc43
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
+        'App\\Http\\Controllers\\Bodeguero\\EntradaController' => __DIR__ . '/../..' . '/app/Http/Controllers/Bodeguero/EntradaController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\Gerente\\BodegaController' => __DIR__ . '/../..' . '/app/Http/Controllers/Gerente/BodegaController.php',
         'App\\Http\\Controllers\\Gerente\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Gerente/HomeController.php',
         'App\\Http\\Controllers\\Gerente\\ProductoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Gerente/ProductoController.php',
-
         'App\\Http\\Controllers\\Gerente\\SucursalController' => __DIR__ . '/../..' . '/app/Http/Controllers/Gerente/SucursalController.php',
 
         'App\\Http\\Controllers\\Gerente\\SucursalController' => __DIR__ . '/../..' . '/app/Http/Controllers/Gerente/SucursalController.php',
-
+        'App\\Http\\Controllers\\Gerente\\SucursalController' => __DIR__ . '/../..' . '/app/Http/Controllers/Gerente/SucursalController.php',
+        'App\\Http\\Controllers\\Gerente\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Gerente/UserController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\RoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/RoleController.php',
+        'App\\Http\\Controllers\\Vendedor\\ClienteController' => __DIR__ . '/../..' . '/app/Http/Controllers/Vendedor/ClienteController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -532,6 +538,7 @@ class ComposerStaticInitce9ccdd5a6fc48d2dc5a3f295fb1fc43
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Producto' => __DIR__ . '/../..' . '/app/Producto.php',
+        'App\\Proveedor' => __DIR__ . '/../..' . '/app/Proveedor.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',

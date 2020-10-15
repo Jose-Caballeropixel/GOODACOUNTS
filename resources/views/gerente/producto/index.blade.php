@@ -6,6 +6,11 @@
         <div class="col-md-8">
 
             <a href="{{route('gerente.producto.create')}}">Crear producto</a>
+
+            <form action="{{route('gerente.producto.index')}}" method="get">
+                <input type="text" name="nombreP" placeholder="Producto">
+                <input type="submit" value="Buscar">
+            </form>
             <table class="table table-responsive">
                 <thead>
                     <tr>
@@ -36,6 +41,4 @@
         </div>
     </div>
 </div>
-
-
 @endsection

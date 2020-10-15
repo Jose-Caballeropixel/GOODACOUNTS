@@ -14,9 +14,11 @@ class ProductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $productos = Producto::latest()->paginate(10);
+    
+        $nombre = $request->get('nombreP');
+        $productos = Producto::orderBy('id','DESC')->nombre($nombre)->get();
         return view('gerente.producto.index', compact('productos'));
     }
 
@@ -130,5 +132,14 @@ class ProductoController extends Controller
     public function destroy(Producto $producto)
     {
         //
+    }
+
+    //Metodos para consumir por ajax
+
+    public function buscar(Request $request)
+    {
+        $nombre=$request['nombre'];
+        $productos= Producto::where('nombre', 'LIKE', "%$nombre%");
+        return response()->json($productos, 200);
     }
 }
