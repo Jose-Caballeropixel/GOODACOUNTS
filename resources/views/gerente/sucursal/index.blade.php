@@ -1,52 +1,27 @@
-<<<<<<< HEAD
 @extends('dashboard.sidebargerente')
 
 @section('content')
-    <a class="btn-crear-sucursal btn" href="{{ route('gerente.sucursal.create') }}">Crear Sucursal</a>
-    <br><br>
-    <div class="table tabla-container">
-        <h1 class="text-center">Sucursal</h1>
-        <table class="tabla mt-5 table-responsive">
-            <thead>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Sucursal</h1>
-    <a href="{{route('gerente.sucursal.create')}}">Formulario</a>
-    <a href="{{route('gerente.bodega.index')}}">Lista de bodegas</a>
-    <br><br>
-    <form action="{{route('gerente.sucursal.index')}}" method="GET">
-        <input type="text" name="nombre" placeholder="Sucursal">
-        <input type="submit" value="Buscar">
-    </form>
-    <table>
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Nombre Sucursal</th>
-                <th>Direccion</th>
-                <th>Correo electronico</th>
-                <th>opciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($sucursales as $sucursal)
->>>>>>> ebfd4cc242d2a2a84b1107b173ab1e919a457a16
-                <tr>
-                    <th>#</th>
-                    <th>Nombre Sucursal</th>
-                    <th>Direccion</th>
-                    <th>Correo electronico</th>
-                    <th>opciones</th>
-                </tr>
-            </thead>
+    <div class="container">
+        <h1 class="text-center">Sucursales</h1>
+        <div class="btn-encabezado-productos d-flex justify-content-between">
+            <form class="form-inline" action="{{ route('gerente.sucursal.index') }}" method="get">
+                <input class="form-control" type="text" name="nombre" placeholder="Buscar">
+                <input class="btn btn-outline-success ml-2" type="submit" value="Buscar">
+            </form>
+            <a class="btn btn-outline-dark" href="{{ route('gerente.sucursal.create') }}">Crear sucursal <li
+                    class="fas fa-plus"></li></a>
+        </div>
+        <table class="table mt-3">
+            <tbody>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre Sucursal</th>
+                        <th>Direccion</th>
+                        <th>Correo electronico</th>
+                        <th>opciones</th>
+                    </tr>
+                </thead>
             <tbody>
                 @foreach ($sucursales as $sucursal)
                     <tr>
@@ -64,22 +39,11 @@
                             </a>
                         </td>
                     </tr>
-
                 @endforeach
-                </tbody>
+            </tbody>
         </table>
         <div class="paginacion">
             {{ $sucursales->links() }}
         </div>
     </div>
-
-<<<<<<< HEAD
 @endsection
-=======
-            @endforeach
-        </tbody>
-
-    </table>
-</body>
-</html>
->>>>>>> ebfd4cc242d2a2a84b1107b173ab1e919a457a16

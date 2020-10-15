@@ -17,15 +17,15 @@ class ProveedorController extends Controller
     {
         $nit = $request->get('nit');
         $bodega_id = intval($request->get('bodega'));
-            
+
             $proveedor = Proveedor::select('id')->where("NIT",$nit)->find(1);
-            $id=$proveedor->id;
+            $id=$proveedor;
             if($id){
                 return redirect()->route('bodeguero.entrada',['proveedor'=>$id,'bodega'=>$bodega_id]);
-            } 
-       
-      
-       
+            }
+
+
+
     }
 
     /**
