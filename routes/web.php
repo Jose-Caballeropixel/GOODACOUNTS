@@ -77,7 +77,7 @@ Route::put('/gerente/sucursal/{sucursal}','Gerente\SucursalController@update')->
 Route::get('/gerente/bodega','Gerente\BodegaController@index')->name('gerente.bodega.index');
 Route::get('/gerente/bodega/create/{sucursal}','Gerente\BodegaController@crearBodega')->name('gerente.bodega.create');
 Route::post('/gerente/bodega/store','Gerente\BodegaController@store')->name('gerente.bodega.store');
-
+Route::get('/gerente/bodega/edit','Gerente\BodegaController@edit')->name('gerente.bodega.edit');
 
 Route::get('/gerente/bodega/{bodega}/show','Gerente\BodegaController@show')->name('gerente.bodega.show');
 Route::get('/gerente/bodega/{bodega}/buscador','Gerente\BodegaController@buscadorProveedor')->name('gerente.bodega.buscador');

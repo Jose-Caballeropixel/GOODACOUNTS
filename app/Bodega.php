@@ -13,4 +13,9 @@ class Bodega extends Model
     {
         return $this->belongsTo(Sucursal::class);
     }
+
+    public function entradas()
+    {
+        return $this->hasMany(Entrada::class);
+    }
 }
