@@ -53,7 +53,7 @@ Route::post('/bodeguero/buscar/producto', 'Bodeguero\EntradaController@buscar')-
 
 
 // rutas del gerente para crear sucursales
-Route::get('/gerente','Gerente\SucursalController@index')->name('gerente.sucursal.index');
+Route::get('/gerente/sucursal','Gerente\SucursalController@index')->name('gerente.sucursal.index');
 Route::get('/gerente/sucursal/create','Gerente\SucursalController@create')->name('gerente.sucursal.create');
 Route::post('/gerente/sucursal/store','Gerente\SucursalController@store')->name('gerente.sucursal.store');
 Route::get('/gerente/sucursal/{sucursal}/edit','Gerente\SucursalController@edit')->name('gerente.sucursal.edit');
