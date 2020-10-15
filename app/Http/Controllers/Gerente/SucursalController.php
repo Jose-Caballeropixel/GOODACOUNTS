@@ -16,7 +16,7 @@ class SucursalController extends Controller
      */
     public function index()
     {
-        $sucursales = Sucursal::latest()->paginate(4);
+        $sucursales = Sucursal::first()->paginate(4);
         return view('gerente.sucursal.index',compact('sucursales'));
     }
 

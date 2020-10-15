@@ -6,13 +6,23 @@
             <h3>Bienvenido Administrador</h3>
         </div>
         <div class="opciones-admin">
-            <div class="row">
-                <div class="col">
-                    <div class="icon-enlace">
-                        <a href="" class="">
-                            <img src="/img/anadir-evento.png" alt="" width="100" class="d-block">
-                            <h3>Crear empresa</h3>
-                        </a>
+            <div class="container">
+                <div class="rows">
+                    <div class="columna">
+                        <div class="icon-enlace">
+                            <a href="{{ route('administrador.empresa.create') }}">
+                                <img src="{{ asset('/img/anadir-evento.png') }}" alt="" width="100">
+                                <h3>Crear Empresa</h3>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="columna">
+                        <div class="icon-enlace">
+                        <a href="{{route('gerente.index')}}">
+                                <img src="{{ asset('/img/anadir-evento.png') }}" alt="" width="100">
+                                <h3>Crear Empresa</h3>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

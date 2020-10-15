@@ -1,22 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>formulario</h1>
-    <form action="{{route('gerente.sucursal.store')}}" method="POST">
-        @csrf
+@extends('dashboard.sidebargerente')
+
+@section('content')
+<h1 class="text-center">Formulario</h1>
+<div class="contenido-formulario justify-content-center">
+<form action="{{route('gerente.sucursal.store')}}" method="POST">
+    @csrf
+    <div class="form-group">
         <label for="">Nombre sucursal: </label>
-        <input type="text" name="nombre">
+        <input type="text" name="nombre" class="form-control">
+    </div>
+    <div class="form-group">
         <label for="">Direccion: </label>
-        <input type="text" name="direccion">
+        <input type="text" name="direccion" class="form-control">
+    </div>
+    <div class="form-group">
         <label for="">Correo: </label>
-        <input type="text" name="correo">
-        <button type="submit">Agregar sucursal</button>
-    </form>
-</body>
-</html>
+        <input type="text" name="correo" class="form-control">
+    </div>
+    <div class="btn-form form-group">
+        <button type="submit" class="btn-guardar btn">Agregar sucursal</button>
+    </div>
+</form>
+</div>
+@endsection
