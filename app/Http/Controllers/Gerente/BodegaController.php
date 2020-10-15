@@ -71,7 +71,7 @@ class BodegaController extends Controller
 
     public function buscadorProveedor(Bodega $bodega)
     {
-        
+
         return view('gerente.bodega.buscador',compact('bodega'));
     }
     /**

@@ -23,7 +23,7 @@
                         <td>{{ $bodega->id }}</td>
                         <td>{{ $bodega->Encargado }}</td>
                         <td>{{ $bodega->direccionB }}</td>
-                        <td>{{ $bodega->sucursal_id }}</td>
+                        <td>{{ $bodega->sucursal->id}}</td>
                         <td>
                             <a href="">Modificar</a>
                             <a href="{{ route('gerente.bodega.show', ['bodega' => $bodega->id]) }}">Ver</a>

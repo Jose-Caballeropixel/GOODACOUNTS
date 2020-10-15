@@ -37,9 +37,9 @@
                 <a href="{{ route('gerente.index') }}">
                     <li class="fas fa-tachometer-alt"></li> <span>Tablero</span>
                 </a>
-                {{-- <a href="{{ route('gerente.bodega.index') }}">
+                <a href="{{ route('gerente.bodega.index') }}">
                     <li class="fas fa-box"></li> <span>Bodegas</span>
-                </a> --}}
+                </a>
                 <a href="{{ route('gerente.producto.index') }}">
                     <li class="fas fa-tags"></li> <span>Productos</span>
                 </a>
