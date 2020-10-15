@@ -1,0 +1,21 @@
+.contenido-formulario{
+    padding-left: 60px;
+    padding-right: 60px;
+}
+.btn-guardar{
+    background: #7A7DAF;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+.btn-form{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.paginacion{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}

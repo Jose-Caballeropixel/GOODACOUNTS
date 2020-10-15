@@ -48,7 +48,7 @@ class EmpresaController extends Controller
         $empresas->Nombre = $data['nombre'];
         $empresas->Correo = $data['correo'];
         $empresas->save();
-        return redirect()->route('administrador.empresa.index');
+        return redirect()->route('administrador.usuarios.create',['empresa'=>$empresas]);
 
 
     }
