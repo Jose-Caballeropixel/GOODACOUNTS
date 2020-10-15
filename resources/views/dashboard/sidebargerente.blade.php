@@ -34,13 +34,8 @@
     <div class="contenido-general">
         <div class="sidebar">
             <div class="titul">
-<<<<<<< HEAD
-                <a href="{{ route('gerente.sucursal.create') }}">
-                    <li class="fas fa-store-alt"></li> <span>Sucursales</span>
-=======
                 <a href="{{ route('gerente.index') }}">
                     <li class="fas fa-tachometer-alt"></li> <span>Tablero</span>
->>>>>>> 6eb24748a3761c6a2bec16fee4db27b5f21f9a9c
                 </a>
                 <a href="{{ route('gerente.bodega.index') }}">
                     <li class="fas fa-box"></li> <span>Bodegas</span>
