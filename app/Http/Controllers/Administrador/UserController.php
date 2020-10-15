@@ -32,7 +32,7 @@ class UserController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'empresa_id' => $data['empresa_id'],
-            'role_id' => 1
+            'role_id' => 2
         ]);
         return redirect()->route('administrador.usuarios.index');
     }
