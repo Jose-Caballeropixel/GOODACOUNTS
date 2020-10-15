@@ -24,7 +24,7 @@ Route::put('/administrador/empresa/{empresa}','Administrador\EmpresaController@u
 
 //Rutas de aministrador para crear usuario
 Route::get('/administrador/usuarios', 'Administrador\UserController@index')->name('administrador.usuarios.index');
-Route::get('/administrador/usuarios/create', 'Administrador\UserController@create')->name('administrador.usuarios.create');
+Route::get('/administrador/usuarios/create/{empresa}', 'Administrador\UserController@create')->name('administrador.usuarios.create');
 Route::post('/administrador/usuarios/store', 'Administrador\UserController@store')->name('administrador.usuarios.store');
 
 Route::get('/empresa','Administrador\EmpresaController@index')->name('administrador.empresa.index');

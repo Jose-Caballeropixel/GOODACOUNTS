@@ -15,7 +15,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('administrador.index');
+        $empresas = Empresa::first()->paginate(4);
+        return view('administrador.index',compact('empresas'));
     }
 
     /**

@@ -2,8 +2,10 @@
 
 @section('content')
     <div class="container">
-        <a class="btn btn-outline-dark" href=""><li class="fas fa-arrow-circle-left"></li> Regresar</a>
-        <h3 class="text-center">Crear Usuarios</h3>
+        <a class="btn btn-outline-dark" href="{{ route('administrador.usuarios.index') }}">
+            <li class="fas fa-arrow-circle-left"></li> Regresar
+        </a>
+        <h3 class="text-center">Crear Empresario</h3>
         <form class="mt-3" method="POST" action="{{ route('administrador.usuarios.store') }}">
             @csrf
 
@@ -60,6 +62,8 @@
                         autocomplete="new-password">
                 </div>
             </div>
+                <input type="hidden" value="{{$empresa->id}} " name="empresa_id">
+
 
 
             <div class="btn-form form-group">
@@ -67,5 +71,6 @@
             </div>
         </form>
     </div>
+
 
 @endsection

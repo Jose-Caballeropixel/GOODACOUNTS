@@ -4,64 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/estilosdashboard.css') }}">
+    <script src="{{ asset('/js/menuhorizontal.js') }}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
         integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
         crossorigin="anonymous" />
-    <link rel="stylesheet" href="{{ asset('/css/estilosdashboard.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/estilosgerente.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/estilosadmin.css') }}">
 </head>
 
 <body>
+
     <input type="checkbox" id="check">
-    <div class="navbar navbar-expand-lg justify-content-between">
-        <div class="lado-derecho">
-            <a href="">Good Accounts</a>
-            <label for="check">
-                <li class="fas fa-bars" id="#btn-sidebar"></li>
-            </label>
+    <header>
+        <div class="menu_bar">
+            <div class="interiorbar">
+                <h3>Goodacount</h3>
+            </div>
         </div>
-        <div class="lado-izquierdo">
+        <nav style="text-align: right;">
             <ul>
-                <a href=""><span>Cerrar Sesion</span></a>
+                <li><a href="#">Goodacount</a></li>
+                <li></li>
+                <li style="float: right;"><a href="#">Cerrar Sesion</a></li>
             </ul>
-        </div>
-    </div>
+        </nav>
+    </header>
 
-    <div class="sidebar">
-        <div class="opciones-sidebar">
-            <a href="{{ route('gerente.sucursal.index') }}">
-                <li class="fas fa-store-alt"></li> <span>Sucursales</span>
-            </a>
-            <a href="">
-                <li class="fas fa-tags"></li> <span>Productos</span>
-            </a>
-            <a href="{{route('gerente.usuarios.index')}}">
-                <li class="fas fa-users"></li> <span>Usuarios</span>
-            </a>
-            <a href="">
-                <li class="fas fa-address-book"></li> <span>Proveedores</span>
-            </a>
-            <a href="">
-                <li class="fas fa-shopping-bag"></li> <span>Ventas</span>
-            </a>
-            <a href="">
-                <li class="fas fa-boxes"></li> <span>Pedidos</span>
-            </a>
-            <a href="">
-                <li class="fas fa-box"></li> <span>Bodegas</span>
-            </a>
-            <a href="">
-                <li class="fas fa-sign-out-alt"></li> <span>Salir</span>
-            </a>
+    <div class="contenido-general">
+        <div class="sidebar">
+            <div class="titul">
+                <a href="{{ route('gerente.sucursal.index') }}">
+                    <li class="fas fa-store-alt"></li> <span>Sucursales</span>
+                </a>
+                <a href="">
+                    <li class="fas fa-tags"></li> <span>Productos</span>
+                </a>
+                <a href="{{route('gerente.usuarios.index')}}">
+                    <li class="fas fa-users"></li> <span>Usuarios</span>
+                </a>
+                <a href="">
+                    <li class="fas fa-address-book"></li> <span>Proveedores</span>
+                </a>
+                <a href="">
+                    <li class="fas fa-shopping-bag"></li> <span>Ventas</span>
+                </a>
+                <a href="">
+                    <li class="fas fa-boxes"></li> <span>Pedidos</span>
+                </a>
+                <a href="">
+                    <li class="fas fa-box"></li> <span>Bodegas</span>
+                </a>
+                <a href="">
+                    <li class="fas fa-sign-out-alt"></li> <span>Salir</span>
+                </a>
+            </div>
         </div>
-    </div>
 
-    <div class="content">
-        <div class="fondo-cabecera-contenido">
-        </div>
-        <div class=" container contenedor-contenido-general">
-            @yield('content')
+        <div class="content">
+            <div class="container-fluid">
+                <div class="fondo"></div>
+                <div class="cont-dashboard">
+                    @yield('content')
+                </div>
+            </div>
         </div>
     </div>
 </body>
